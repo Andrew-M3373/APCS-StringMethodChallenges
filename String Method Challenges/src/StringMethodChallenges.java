@@ -1,9 +1,17 @@
 import java.util.Scanner;
 public class StringMethodChallenges {
 
+	static int counter = 0;
+	static String userString = "";
+	static Scanner userInput;
 	public static void main(String[] args) {
-		
-		// Use Your Inside Voice
+		useYourInsideVoice();
+		verticalLetters();
+		countTheVowels();
+		palindromeTester();
+		pigLatin();
+	}
+	public static void useYourInsideVoice() {
 		Scanner userInput = new Scanner(System.in);
 		System.out.println("Say anything in all caps.");
 		
@@ -13,17 +21,13 @@ public class StringMethodChallenges {
 		userString = userString.substring(0, 1).toUpperCase() + userString.substring(1, userString.length());
 		
 		System.out.println(userString);
-		
-		
-		
-		// Vertical Letters
+	}
+	public static void verticalLetters() {
 		for (int i = 0; i < userString.length(); i++) {
 			System.out.println(userString.substring(i, i+1));
 		}
-		
-		
-		
-		// Count the Vowels
+	}
+	public static void countTheVowels() {
 		System.out.println("Input a sentence and this program will count the vowels.");
 		userString = userInput.nextLine().toLowerCase();
 		int counter = 0;
@@ -36,10 +40,8 @@ public class StringMethodChallenges {
 			}
 		}
 		System.out.printf("There are %d vowels in your sentence.\n", counter);
-		
-		
-		
-		// Palindrome Tester
+	}
+	public static void palindromeTester() {
 		System.out.println("Type something and this program will tell you if it is a palindrome.");
 		userString = userInput.nextLine();
 		//System.out.println(userString.toLowerCase().replaceAll("\\s", "").length());
@@ -58,10 +60,8 @@ public class StringMethodChallenges {
 		else {
 			System.out.printf("Your string, %s, is not a palindrome.", userString);
 		}
-		
-		
-		
-		// Pig Latin
+	}
+	public static void pigLatin() {
 		System.out.println("\n\nInput a string and we will return your string in Pig Latin.");
 		userString = userInput.nextLine();
 		
@@ -72,13 +72,15 @@ public class StringMethodChallenges {
 		System.out.println(userStringArray.length);
 
 		for (int i = 0; i < userStringArray.length; i++) {
-			switch (userStringArray[i]) {
+			switch (userStringArray[0].substring(0,1)) {
 			case "a": case "e": case "i": case "o": case "u":
-				System.out.println("");
+				System.out.println(userStringArray[i].substring(1,userStringArray[i].length()) + "way ");
+				break;
+			default: 
+				System.out.println(userStringArray[i].substring(1,userStringArray[i].length()) 
+						+ userStringArray[i].substring(0,1) + "ay ");
 			}
 		}
-		
-		
 	}
 
 }
