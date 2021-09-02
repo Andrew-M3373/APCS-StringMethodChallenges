@@ -10,6 +10,7 @@ public class StringMethodChallenges {
 		countTheVowels();
 		palindromeTester();
 		pigLatin();
+		
 	}
 	public static void useYourInsideVoice() {
 		Scanner userInput = new Scanner(System.in);
